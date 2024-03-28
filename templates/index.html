@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>HarvardMoves</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <div class="sidebar">
+    <div id="sidebar-header">
+      <h1>HarvardMoves</h1>
+      <p>Select where you want to go using the dropdown!</p>
+      <p>The ETA of the bus from your departure stop will be shown below. There may be multiple possible routes.</p>  
+      <p>You can see your route and the live bus updates on the right!</p>
+      <span class="label">To:</span>
+      <select id="toDropdown">
+        <option>Select a bus route</option>
+      </select>
+      </br>
+      </br>
+      <span class="label">From:</span>
+      <select id="fromDropdown">
+        <option>Select a bus route</option>
+      </select>
+    </div>
+    <div id="sidebar-content">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div id="routeResults"></div>
+    </div>
+  </div>
+  <div id="map">
+  </div>
+  <script src="{{ url_for('static', filename='stops.js') }}"></script>
+  <script src="{{ url_for('static', filename='mapsetup.js') }}"></script>
+  <script src="{{ url_for('static', filename='dataFetchers.js') }}"></script>
+  <script src="{{ url_for('static', filename='calculations.js') }}"></script>
+  <script src="{{ url_for('static', filename='uiHelpers.js') }}"></script>
+</body>
+</html>
